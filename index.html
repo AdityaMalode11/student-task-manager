@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Student Task Manager</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="container">
+
         <h1>Student Task Manager</h1>
 
         <input type="text" id="taskInput" placeholder="Enter a task">
+
+        <select id="priorityInput">
+            <option value="Low">Low Priority</option>
+            <option value="Medium">Medium Priority</option>
+            <option value="High">High Priority</option>
+        </select>
+
         <button onclick="addTask()">Add Task</button>
 
         <ul id="taskList"></ul>
+
     </div>
 
     <script src="script.js"></script>
+
 </body>
-</html> 
+
+</html>
