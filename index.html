@@ -6,15 +6,32 @@
 </head>
 <body>
 
-    <div class="container">
-        <h1>Student Task Manager</h1>
+<div class="container">
+    <h1>Student Task Manager</h1>
 
-        <input type="text" id="taskInput" placeholder="Enter a task">
-        <button onclick="addTask()">Add Task</button>
+    <div class="dashboard">
+        <div class="card">
+            <h3>Total Tasks</h3>
+            <p id="totalTasks">0</p>
+        </div>
 
-        <ul id="taskList"></ul>
+        <div class="card">
+            <h3>Completed</h3>
+            <p id="completedTasks">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending</h3>
+            <p id="pendingTasks">0</p>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button onclick="addTask()">Add Task</button>
+
+    <ul id="taskList"></ul>
+</div>
+
+<script src="script.js"></script>
 </body>
-</html> 
+</html>
