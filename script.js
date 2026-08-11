@@ -12,10 +12,15 @@ function addTask() {
     const li = document.createElement("li");
 
     li.innerHTML = `
-        <span>${taskText}</span>
-        <button class="delete-btn" onclick="deleteTask(this)">
-            Delete
-        </button>
+        <span onclick="completeTask(this)">${taskText}</span>
+        <div>
+            <button onclick="completeTask(this.parentElement.previousElementSibling)">
+                Complete
+            </button>
+            <button class="delete-btn" onclick="deleteTask(this)">
+                Delete
+            </button>
+        </div>
     `;
 
     taskList.appendChild(li);
@@ -23,6 +28,11 @@ function addTask() {
     taskInput.value = "";
 }
 
+function completeTask(task) {
+    task.style.textDecoration = "line-through";
+    task.style.color = "green";
+}
+
 function deleteTask(button) {
-    button.parentElement.remove();
+    button.parentElement.parentElement.remove();
 }
