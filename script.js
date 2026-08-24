@@ -2,7 +2,10 @@ let tasks = [];
 
 function addTask() {
     const input = document.getElementById("taskInput");
+    const priorityInput = document.getElementById("priorityInput");
+
     const taskText = input.value.trim();
+    const priority = priorityInput ? priorityInput.value : "Low";
 
     if (taskText === "") {
         alert("Please enter a task");
@@ -11,6 +14,7 @@ function addTask() {
 
     tasks.push({
         text: taskText,
+        priority: priority,
         completed: false
     });
 
@@ -37,7 +41,7 @@ function displayTasks() {
 
         li.innerHTML = `
             <span class="${task.completed ? "completed" : ""}">
-                ${task.text}
+                ${task.text} - ${task.priority} Priority
             </span>
 
             <button onclick="completeTask(${index})">
@@ -49,6 +53,14 @@ function displayTasks() {
             </button>
         `;
 
+        if (task.priority === "High") {
+            li.classList.add("high-priority");
+        } else if (task.priority === "Medium") {
+            li.classList.add("medium-priority");
+        } else {
+            li.classList.add("low-priority");
+        }
+
         list.appendChild(li);
     });
 
@@ -56,11 +68,21 @@ function displayTasks() {
 }
 
 function updateDashboard() {
-    document.getElementById("totalTasks").textContent = tasks.length;
+    const totalTasks = document.getElementById("totalTasks");
+    const completedTasks = document.getElementById("completedTasks");
+    const pendingTasks = document.getElementById("pendingTasks");
+
+    if (totalTasks) {
+        totalTasks.textContent = tasks.length;
+    }
 
     const completed = tasks.filter(task => task.completed).length;
 
-    document.getElementById("completedTasks").textContent = completed;
-    document.getElementById("pendingTasks").textContent =
-        tasks.length - completed;
+    if (completedTasks) {
+        completedTasks.textContent = completed;
+    }
+
+    if (pendingTasks) {
+        pendingTasks.textContent = tasks.length - completed;
+    }
 }
