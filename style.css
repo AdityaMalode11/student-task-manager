@@ -19,7 +19,13 @@ h1 {
 
 input {
     padding: 12px;
-    width: 60%;
+    width: 45%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select {
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -41,6 +47,23 @@ li {
     list-style: none;
     padding: 10px;
     margin: 8px;
-    background-color: #f1f1f1;
     border-radius: 5px;
+}
+
+/* High priority */
+.high-priority {
+    background-color: #ffcccc;
+    border-left: 5px solid red;
+}
+
+/* Medium priority */
+.medium-priority {
+    background-color: #fff0b3;
+    border-left: 5px solid orange;
+}
+
+/* Low priority */
+.low-priority {
+    background-color: #ccffcc;
+    border-left: 5px solid green;
 }
