@@ -2,11 +2,11 @@
   "name": "devops-task-manager",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
-  "scripts": {
-    "start": "echo Starting Student Task Manager",
-    "build": "node build.js"
-  },
+ "scripts": {
+  "start": "echo Starting Student Task Manager",
+  "build": "node build.js",
+  "test": "node test.js"
+  }, 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sanketmagar1012/devops-task-manager.git"
